@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div>
+    <br><br>
+    <a style="font-size:45px;font-family: STKaiti;color:#1c53ad ;font-weight: 500">登 陆</a>
+    <h2>{{msg}}</h2>
+
+    <form method="post">
+    <br>
+        <a style="font-family: STKaiti;font-size: 20px ;color: #515559">用户名：<input type="text" name="username"></a>
+        <br>
+        <br>
+        <a style="font-family: STKaiti;font-size: 20px ;color: #515559"> 密  码  ： <input type="text" name="password"></a>
+        <br>
+        <br>
+        <input type="submit" name="提交">
+    </form>
+<!--登陆password最长24个字符，username最长10个字符-->
+    <br>
+
+    <el-link type="primary"><a href="/register">注册</a></el-link>
+</div>
+<style>
+    body{
+        background-image: url(f.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+    }
+</style>
+
+</body>
+</html>

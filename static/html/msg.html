@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息</title>
+</head>
+<body>
+<br>
+<br>
+<br><br><br>
+    <a style="font-family: STKaiti;font-size: 20px ;color: #6c4334">你的名字是：{{name1}}</a>
+    <a style="font-family: STKaiti;font-size: 20px ;color: #6c4334"> 另一方名字：{{name2}}</a>
+    <ul>
+        {% for k,v in msg_list %}
+            {% if k %}
+                <li class="people1">{{v}}</li>
+            {% else %}
+                <li class="people2">{{v}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+<br><br>
+
+    <div>
+        <a style="font-size: x-large;font-family:FangSong_GB2312;color: #536c4f;font-weight: 400">发送信息模块</a>
+        <br>
+        <br>
+        <form method="post">
+            <a style="font-size: large;font-family:FangSong_GB2312;color: #536c4f">信息：<input type="text" name="to_msg"></a>
+            <br><br>
+            <input type="submit" name="发送">
+        </form>
+    </div>
+    <style>
+        body{
+            background-image: url(/static/img/w.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+    </style>
+
+</body>
+</html>

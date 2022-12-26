@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- 生产环境版本，优化了尺寸和速度 -->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>-->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/type.css">
+    <script src="/static/js/main.js"></script>
+    <title>主界面</title>
+</head>
+<body>
+    <div class="main">
+        <el-container>
+            <el-header>
+            <el-row >
+                    <el-col :span="20"><div class="grid-content bg-blue">
+                        <br>
+                        <i class="el-icon-view"></i>
+                        <a>主  界  面</a>
+                        <br>
+                        <br>
+                    </div></el-col>
+                    <el-col :span="6"><div class="grid-content bg-light">
+                        <h3>登陆成功</h3>
+                        <h3>欢迎你的到来，{{msg}}。</h3>
+                </div></el-col>
+            </el-row>
+            </el-header>
+
+            <el-main>
+                <el-row>
+                <el-col :span="6"><div class="grid-content bg-purple">
+                    <br>
+                    <i class="el-icon-star-off"></i> <a> 接收信息模块</a>
+                {% if msg_list %}
+                <ul>
+                    {% for k,v in msg_dict %}
+                    <li>{{k}} 共交流了{{v}}条消息
+                        <br>
+                      <a href="/msg/{{k}}"> <el-link type="success"> 点击此处查看详细消息</el-link></a> </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <ul>
+                    <li>你没有收到任何消息</li>
+                </ul>
+                {% endif %}
+                    <br><br>
+                </div></el-col>
+
+         <br>
+                <el-col :span="6"><div class="grid-content bg-purple">
+                    <br>
+                    <i class="el-icon-star-off"></i><a > 发送信息模块</a>
+
+                <form method="post">
+                    <br>
+                    <a style="position: absolute;left: 30px">接收人：<input type="text" name="to_user"></a>
+                    <br><br>
+                    <a style="position: absolute;left: 30px">信息：<input type="text" name="to_msg"></a>
+                    <br><br>
+                    <i class="el-icon-upload2"></i><input  type="submit" name="发送" style="text-align: center">
+                </form>
+                <a>{{ret_msg}}</a>
+                    <br><br>
+            </div></el-col>
+                </el-row>
+            </el-main>
+        </el-container>
+    </div>
+</body>
+</html>

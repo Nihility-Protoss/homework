@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSA加密</title>
+</head>
+<body>
+<br><br><br><br><br><br><br><br><br><br>
+<a href="/rsa/getUserRSA" style="color: #e2f0f5;font-size: x-large;font-family: FZYaoti">你需要在这里实现一个post方法请求数据，无参数，返回数据为json格式，内容为用户的RSA公私钥.</a>
+<form method="post">
+    <br>
+    <a style="font-family:STXinwei;font-size: larger;color: #e8edf6 ">你需要将数据发往/rsa/setUserRSA页面，以完成公私钥的更换</a>
+    <br><br>
+    <a style="color: #e2f0f5">公钥：<input type="text" name="us_public"></a>
+    <br><br>
+    <a style="color: #e2f0f5">私钥：<input type="text" name="us_private"></a>
+    <br><br>
+    <input type="submit" name="发送">
+</form>
+<div>
+    <br><br>
+    <a style="font-family:STXinwei;font-size: larger;color: #f4f5f8 ">请输入你想要加密/解密的数据</a>
+    <a href="/rsa?type=encrypt">前往加密页面</a>
+    <a href="/rsa?type=decrypt">前往解密页面</a>
+    <form method="post">
+        <br>
+        <a style="color: #e2f0f5">数据：<input type="text" name="need_rsa"></a>
+        <br><br>
+        <input type="submit" name="发送">
+    </form>
+    {{rsa_data}}
+</div>
+<style>
+    body{
+        background-image: url(/static/img/c.jpg);
+        background-repeat: repeat;
+        background-size: cover;
+        text-align: center;
+        margin: auto;
+        width: 550px;
+        height: 500px;
+    }
+</style>
+</body>
+</html>
