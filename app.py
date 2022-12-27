@@ -106,7 +106,7 @@ def msg_socket(name):
     if request.method == 'POST':
         to_msg = request.form.get('to_msg')
         user_msg_to(userID, to_msg, otherID)
-        return redirect('/msg/'+userID)
+        return redirect('/msg/'+otherID)
 
     msg_list = []
     user_P = user_get_pickle(userID)
