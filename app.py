@@ -91,6 +91,7 @@ def user_reg_page():
         check = user_reg(username, password)
         if check[0]:
             session['userID'] = check[0]
+            session['ret_msg'] = ''
             return redirect('/index')
         else:
             return render_template('html/register.html', **{'msg': check[1]})
